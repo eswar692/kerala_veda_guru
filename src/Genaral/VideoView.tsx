@@ -1,4 +1,4 @@
-import { phone_number, whatsapp_number } from "./secrete";
+import { phone_number, whatsapp_number, company_name } from "./secrete";
 
 const ImageView = () => {
   return (
@@ -16,7 +16,7 @@ const ImageView = () => {
       {/* Text & Buttons Overlay */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">
         <h1 className="text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg montserrat">
-          Devi Sri Prasad Astro
+          {company_name}
         </h1>
 
         <p className="mt-4 text-white text-sm md:text-lg open-sans leading-snug max-w-xs md:max-w-lg">
