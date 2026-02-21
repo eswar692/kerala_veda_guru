@@ -25,94 +25,102 @@ export default function Footer() {
     "Husband-Wife Dispute Specialist",
     "Happy Clients",
     "Online Astrologer",
-    "Visa Problems",
   ];
 
   return (
-    <motion.footer className="z-99 mt-2  relative text-white pt-20 w-full overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-black">
-      {/* Floating Glow Background */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-yellow-400/10 rounded-full blur-3xl animate-ping"></div>
+    <motion.footer
+      className="relative mt-2 w-full overflow-hidden text-white
+  bg-gradient-to-br from-fuchsia-800 via-purple-900 to-indigo-950 pt-20"
+    >
+      {/* Strong Color Blobs */}
+      <div className="absolute -top-24 -left-24 w-[450px] h-[450px] bg-pink-600 rounded-full blur-3xl opacity-40"></div>
+      <div className="absolute top-1/4 -right-32 w-[520px] h-[520px] bg-indigo-700 rounded-full blur-3xl opacity-40"></div>
+      <div className="absolute bottom-0 left-1/3 w-[420px] h-[420px] bg-yellow-500 rounded-full blur-3xl opacity-30"></div>
 
       <motion.div
         ref={ref}
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8 }}
-        className="relative max-w-7xl mx-auto px-6 py-5 grid grid-cols-1 md:grid-cols-4 gap-10"
+        className="relative max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10"
       >
-        {/* About */}
-        <div className="space-y-4 bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl shadow-pink-400/40 transition">
-          <h2 className="font-extrabold text-2xl montserrat text-pink-400 tracking-wide">
+        {/* ABOUT */}
+        <div className="rounded-3xl p-6 bg-purple-950 border border-white/20">
+          <h2 className="text-2xl font-extrabold montserrat text-white mb-3">
             About {company_name}
           </h2>
-          <p className="text-sm open-sans text-gray-200 leading-relaxed">
-            <b className="text-yellow-400">{company_name}</b> is one of South
-            India’s Top Astrologers. With deep expertise,{" "}
-            <span className="font-semibold">{person_name}</span> guides clients
-            to achieve clarity in love, career, marriage & life.
+          <p className="text-sm leading-relaxed text-white">
+            <b className="text-white">{company_name}</b> is one of South India’s
+            trusted astrologers. <b>{person_name}</b> provides guidance in love,
+            marriage, career & life.
           </p>
         </div>
 
-        {/* Contact */}
-        <div className="space-y-4 bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl shadow-purple-400/40 transition">
-          <h2 className="font-bold text-2xl montserrat text-yellow-400 tracking-wide">
+        {/* CONTACT */}
+        <div className="rounded-3xl p-6 bg-indigo-950 border border-white/20">
+          <h2 className="text-2xl font-bold montserrat text-white mb-4">
             Contact Us
           </h2>
-          <p className="flex items-center gap-2 text-gray-200">
-            <Phone className="w-5 h-5 text-pink-400" />
+
+          <p className="flex items-center gap-2 text-white">
+            <Phone className="w-5 h-5 text-white" />
             {phone_number}
           </p>
-          <p className="flex items-center gap-2 text-gray-200">
-            <MessageCircle className="w-5 h-5 text-green-400" />
+
+          <p className="flex items-center gap-2 text-white mt-2">
+            <MessageCircle className="w-5 h-5 text-white" />
             {whatsapp_number}
           </p>
-          <p className="mt-4 font-bold montserrat text-pink-300 text-lg">
-            Best Astro Guidance 🌟
+
+          <p className="text-sm mt-3 leading-relaxed text-white">
+            <b>No. 34, 7th Cross, Vijay Nagar</b>
+            <br />
+            98/3 DC Road, Kuttiyappa Garden
+            <br />
+            Bilekahalli, Bengaluru – 560076
+            <br />
+            Karnataka, India
+            <br />
+            <a href="tel:9110222675" className="underline">
+              📞 +91 91102 22675
+            </a>
           </p>
-          <p className="text-xs text-gray-300 tracking-wider uppercase">
-            Authentic | Reliable | Genuine | Supportive
+
+          <p className="mt-3 font-semibold text-white">
+            Best Astro Guidance 🌟
           </p>
         </div>
 
-        {/* Services */}
-        <div className="space-y-3 bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl shadow-yellow-400/40 transition">
-          <h2 className="font-bold text-2xl montserrat text-pink-400 tracking-wide">
+        {/* SERVICES */}
+        <div className="rounded-3xl p-6 bg-fuchsia-950 border border-white/20">
+          <h2 className="text-2xl font-bold montserrat text-white mb-3">
             Our Services
           </h2>
-          <ul className="text-sm space-y-2 open-sans">
-            {services.map((service, idx) => (
-              <li
-                key={idx}
-                className="flex items-center gap-2 hover:text-yellow-400 transition-colors duration-300"
-              >
-                <ChevronRight className="w-4 h-4 text-pink-400 flex-shrink-0" />
+          <ul className="space-y-2 text-sm">
+            {services.map((service, i) => (
+              <li key={i} className="flex items-center gap-2 text-white">
+                <ChevronRight className="w-4 h-4 text-white" />
                 {service}
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Why Choose Us */}
-        <div className="space-y-3 bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl shadow-red-400/40 transition">
-          <h2 className="font-bold text-2xl montserrat text-yellow-400 tracking-wide">
+        {/* WHY CHOOSE */}
+        <div className="rounded-3xl p-6 bg-emerald-950 border border-white/20">
+          <h2 className="text-2xl font-bold montserrat text-white mb-3">
             Why Choose Us?
           </h2>
-          <ul className="text-sm space-y-2 open-sans">
-            {whyChoose.map((item, idx) => (
-              <li
-                key={idx}
-                className="flex items-center gap-2 hover:text-pink-400 transition-colors duration-300"
-              >
-                <ChevronRight className="w-4 h-4 text-yellow-300 flex-shrink-0" />
+          <ul className="space-y-2 text-sm">
+            {whyChoose.map((item, i) => (
+              <li key={i} className="flex items-center gap-2 text-white">
+                <ChevronRight className="w-4 h-4 text-white" />
                 {item}
               </li>
             ))}
           </ul>
         </div>
       </motion.div>
-
-      {/* Copyright */}
 
       <CopyRightAndContact />
     </motion.footer>

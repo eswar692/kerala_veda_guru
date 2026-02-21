@@ -5,8 +5,8 @@ import { company_name, phone_number, whatsapp_number } from "./secrete";
 
 const Header = () => {
   return (
-    <header className="w-full bg-gray-900">
-      <div className="w-full md:w-[85%] mx-auto flex flex-col gap-6   ">
+    <header className="w-full bg-gradient-to-r from-indigo-950 via-purple-950 to-fuchsia-950 border-b border-white/10">
+      <div className="w-full md:w-[90%] mx-auto">
         <Logo />
       </div>
     </header>
@@ -30,46 +30,54 @@ export default Header;
 // );
 
 const Logo = () => (
-  <div className="relative w-full flex flex-row md:flex-row items-center justify-between gap-0 md:gap-2 bg-gray-900 p-1 py-3 md:p-6 ">
-    {/* Logo + Text */}
-    <div className=" w-[85%] flex items-center gap-1 md:gap-8">
-      {/*
-      <div className=" w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden shadow-2xl ">
-        <video
-          src="fb9b120cb8608fc1fa9e08379ead50b1_720w.mp4" // your video path
-          autoPlay
-          loop
-          muted
-          className="border-2 border-purple-500 absolute w-[90px] h-[80px] object-cover rounded-xl transform hover:scale-105 transition-transform duration-500"
-        />
+  <header className="w-full px-4 py-4 md:px-10 md:py-6">
+    <div className="flex items-center justify-between">
+      {/* Logo + Info */}
+      <div className="flex items-start gap-4 md:gap-6">
+        {/* Logo Image */}
+        <div
+          className="w-14 h-14 md:w-20 md:h-20 rounded-2xl overflow-hidden 
+          border border-yellow-400 shadow-lg"
+        >
+          <img
+            src="https://i.pinimg.com/1200x/28/9c/2e/289c2e010fbf9b1e4cba8bab99aa9ed1.jpg"
+            alt="Company Logo"
+            className="w-full h-full object-cover hover:scale-110 transition duration-500"
+          />
+        </div>
 
+        {/* Text */}
+        <div className="flex flex-col">
+          <h1
+            className="montserrat font-extrabold text-xl md:text-3xl 
+            text-white tracking-wide"
+          >
+            {company_name}
+          </h1>
+
+          <p className="text-xs md:text-sm text-yellow-300 italic">
+            Since 1950
+          </p>
+
+          <p className="text-xs md:text-sm text-gray-200 mt-2 leading-relaxed max-w-[360px]">
+            <b>No. 34, 7th Cross, Vijay Nagar</b>, 98/3 DC Road,
+            <br />
+            Kuttiyappa Garden, Bilekahalli,
+            <br />
+            Bengaluru – 560076, Karnataka
+            <br />
+            <span className="text-yellow-400 font-semibold">
+              📞 +91 91102 22675
+            </span>
+          </p>
+        </div>
       </div>
-       */}
 
-      <div className="flex flex-col text-center md:text-left ">
-        <h1 className="px-2 montserrat font-extrabold text-2xl md:text-3xl text-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 drop-shadow-lg text-white">
-          {company_name}
-        </h1>
-        <p className="open-sans text-sm md:text-base text-gray-300 italic -mt-1">
-          Since 1950
-        </p>
-        <p className="open-sans text-xs md:text-sm text-gray-400 mt-1 poppins max-w-[300px] leading-snug">
-          Best astrology services for{" "}
-          <span className="text-purple-400 font-semibold">accurate</span> and{" "}
-          <span className="text-pink-400 font-semibold">
-            personalized guidance
-          </span>
-        </p>
-      </div>
-    </div>
-
-    {/* Menu */}
-    <div className="w-[15%] flex justify-center items-center mt-4 md:mt-0">
+      {/* Menu */}
       <Menu />
     </div>
-  </div>
+  </header>
 );
-
 const Menu = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -113,71 +121,61 @@ const NavLink = ({
 const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   return (
     <div
-      className="fixed top-0 left-0 w-full h-full z-5000 bg-gradient-to-tr from-red-900 via-pink-900 to-yellow-900
-
-
- p-8 flex flex-col justify-between shadow-2xl overflow-y-auto"
+      className="fixed inset-0 z-[9999]
+      bg-gradient-to-b from-black via-purple-950 to-indigo-950
+      px-6 py-8 flex flex-col"
     >
-      {/* Top Section: Logo + Close */}
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="montserrat text-2xl font-bold text-yellow-400 drop-shadow-lg">
-          {company_name} Center
+      {/* Top Bar */}
+      <div className="flex items-center justify-between border-b border-white/10 pb-4">
+        <h1 className="text-2xl font-extrabold text-yellow-400 tracking-wide">
+          {company_name}
         </h1>
         <button
           onClick={() => setOpen(false)}
-          className="p-2 bg-gradient-to-r from-yellow-500 to-yellow-700 rounded-full shadow-lg hover:scale-105 transition-transform"
+          className="p-2 rounded-full bg-yellow-400 hover:bg-yellow-500 transition"
         >
-          <X className="w-6 h-6 text-white" />
+          <X className="w-6 h-6 text-black" />
         </button>
       </div>
 
-      {/* Navigation Links */}
-      <ul className="flex flex-col gap-6 font-medium montserrat text-lg text-gray-100 mb-8">
+      {/* Nav Links */}
+      <ul className="flex flex-col gap-5 mt-8 text-white text-lg font-semibold">
         {["Home", "About", "Services", "Testimonials", "Contact"].map(
           (item) => (
             <Link
               key={item}
               to={`/${item.toLowerCase()}`}
               onClick={() => setOpen(false)}
+              className="py-3 px-4 rounded-xl hover:bg-white/10 hover:text-yellow-400 transition"
             >
-              <li className="hover:text-yellow-400 cursor-pointer transition-colors">
-                {item}
-              </li>
+              {item}
             </Link>
-          )
+          ),
         )}
       </ul>
 
-      {/* Empty Space Section → Add Call / WhatsApp Buttons */}
-      <div className="flex flex-col gap-4 mb-8">
-        <p className="text-gray-200 font-semibold text-center">
-          Need Immediate Help? Contact Us Now!
-        </p>
-        <div className="flex justify-center gap-4">
-          <a
-            href={`tel:${phone_number}`}
-            className="flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform font-semibold"
-          >
-            <Phone size={18} /> Call
-          </a>
-          <a
-            href={`https://wa.me/${whatsapp_number}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform font-semibold"
-          >
-            <MessageCircle size={18} /> WhatsApp
-          </a>
-        </div>
-      </div>
+      {/* CTA Section */}
+      <div className="mt-auto space-y-4 pt-8 border-t border-white/10">
+        <a
+          href={`tel:${phone_number}`}
+          className="flex items-center justify-center gap-2 w-full
+          bg-yellow-400 text-black py-3 rounded-full font-bold
+          hover:bg-yellow-500 transition"
+        >
+          <Phone size={18} />
+          Call Now
+        </a>
 
-      {/* Bottom Section: Company info */}
-      <p className="open-sans text-gray-300 text-sm text-center">
-        <b className="text-yellow-400">{company_name} Center</b> - Trusted
-        astrology services since 1950. Horoscope readings, match-making, career
-        predictions, and spiritual remedies to guide you through life with
-        confidence.
-      </p>
+        <a
+          href={`https://wa.me/${whatsapp_number}`}
+          className="flex items-center justify-center gap-2 w-full
+          bg-green-500 text-white py-3 rounded-full font-bold
+          hover:bg-green-600 transition"
+        >
+          <MessageCircle size={18} />
+          WhatsApp
+        </a>
+      </div>
     </div>
   );
 };

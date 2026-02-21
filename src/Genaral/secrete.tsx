@@ -1,10 +1,10 @@
-const phone_number = "9380595645";
+const phone_number = "9110222675";
 const email = "";
-const whatsapp_number = "919380595645";
-const company_name = "Devi Sri Prasad Astro Center";
-const person_name = "Devi Sri Prasad";
+const whatsapp_number = "9110222675";
+const company_name = "Kerala Future Guide";
+const person_name = "Pandith Madhavan Guruji";
 const address = "";
-const website_url = "https://www.devisriprasadastro.com";
+const website_url = "https://www.keralafutureguide.in";
 
 export {
   phone_number,

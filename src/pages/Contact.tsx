@@ -37,6 +37,19 @@ export default function Contact() {
             spiritual guidance is here to help.
           </p>
 
+          <p className="open-sans text-xs md:text-sm text mt-1 max-w-[340px] leading-relaxed">
+            No 34, 7th Cross, Vijay Nagar, 98/3 DC Road,
+            <br />
+            Kutti Yappa Garden, Bilekahalli,
+            <br />
+            Bengaluru (Urban) – 560076, Karnataka
+            <br />
+            <span className="text-purple-400 font-semibold">
+              Phone: 91102 22675
+            </span>
+          </p>
+
+          <br />
           <div className="space-y-5 text-lg text-gray-800">
             <p className="flex items-center gap-3">
               <Mail className="w-6 h-6 text-pink-600" />

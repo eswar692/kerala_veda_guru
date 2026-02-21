@@ -32,20 +32,11 @@ const services = [
     desc: "Clarity for job opportunities, promotions, and professional success.",
     img: "https://i.pinimg.com/736x/2d/21/ff/2d21ff0997bd7bdfb46491c3d13798c3.jpg",
   },
-  {
-    name: "Vashikaran",
-    desc: "Powerful vashikaran solutions to influence situations positively.",
-    img: "https://i.pinimg.com/1200x/bd/dc/94/bddc94a7fcefc3598976dec33665645a.jpg",
-  },
+
   {
     name: "Future Predictions",
     desc: "Accurate horoscope readings to understand your destiny and future.",
     img: "https://i.pinimg.com/1200x/40/6d/94/406d941b9978384bd9008b1f81c613a3.jpg",
-  },
-  {
-    name: "All Types of Vashikaran",
-    desc: "Specialized remedies for love, family, and professional life.",
-    img: "https://i.pinimg.com/736x/34/1d/eb/341deb4d9ba9bd2934f0d996567b37a3.jpg",
   },
 ];
 

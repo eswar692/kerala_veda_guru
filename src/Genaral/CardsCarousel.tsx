@@ -40,11 +40,11 @@ const cards = [
 const CardCarousel = () => {
   const [emblaRef] = useEmblaCarousel(
     { loop: true, align: "start", skipSnaps: false },
-    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+    [Autoplay({ delay: 4000, stopOnInteraction: false })],
   );
 
   return (
-    <section className="relative w-full max-w-7xl mx-auto py-16 px-4 overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-100 to-red-50">
+    <section className="relative w-full max-w-7xl mx-auto py-16 px-4 overflow-hidden bg-gradient-to-br">
       {/* Floating Background Glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-300/10 rounded-full blur-3xl animate-pulse"></div>

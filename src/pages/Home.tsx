@@ -17,12 +17,12 @@ import {
   phone_number,
   whatsapp_number,
 } from "../Genaral/secrete";
-import VideoView from "../Genaral/VideoView";
+import ImageView from "../Genaral/VideoView";
 
 const Home = () => {
   return (
-    <div className="flex flex-col  bg-orange-200 w-full h-full">
-      <VideoView />
+    <div className="flex flex-col   w-full h-full">
+      <ImageView />
       <CardCarousel />
       <Problems />
       <AboutAstrologer />
@@ -42,110 +42,57 @@ const Problems = () => {
   const problems = [
     {
       title: "Lost Love Back",
-      desc: "Available on both WhatsApp and Call. One call can change your life.",
-      img: "https://i.pinimg.com/736x/4a/c8/aa/4ac8aaa977a4eef9bb1eac0041929380.jpg", // replace with your image
+      desc: "Guidance available through call and WhatsApp consultation.",
+      img: "https://i.pinimg.com/736x/4a/c8/aa/4ac8aaa977a4eef9bb1eac0041929380.jpg",
     },
     {
-      title: "Marriage Problem Solution",
-      desc: "Solve disputes and misunderstandings with astrology guidance.",
+      title: "Marriage Problems",
+      desc: "Astrology solutions for disputes, delays and misunderstandings.",
       img: "https://i.pinimg.com/1200x/c1/2b/fc/c12bfc17ac4630ade4f0e1e4a1f819e2.jpg",
     },
     {
-      title: "Vashikaran Specialist",
-      desc: "Attract your desired partner with trusted vashikaran solutions.",
-      img: "https://i.pinimg.com/736x/05/d1/71/05d171d8361a2e85d98faafd5df9020e.jpg",
-    },
-    {
       title: "Education Remedies",
-      desc: "Personalized astrological remedies and puja to improve concentration, memory and academic success. Suitable for students preparing for exams, entrance tests, or academic growth.",
+      desc: "Astrological remedies to improve focus and academic growth.",
       img: "https://i.pinimg.com/736x/73/49/66/73496669119b34a1dd1ab91ffd626f68.jpg",
-    },
-    {
-      title: "Vastu Pooja & Home Harmony",
-      desc: "Vastu analysis and corrective poojas to balance energy at home or workplace — remove blockages, enhance prosperity, and bring peace to the living space.",
-      img: "https://i.pinimg.com/1200x/22/7a/73/227a73ecafa7e4bc8f6b256083a0e7c2.jpg",
-    },
-    {
-      title: "Career & Job Guidance",
-      desc: "Astrological career mapping, timely remedies and rituals to unlock career opportunities, interview luck, job changes and business growth.",
-      img: "https://i.pinimg.com/736x/1e/a3/1c/1ea31c29817c2b9435c0e29040497a47.jpg",
-    },
-    {
-      title: "Health & Wellbeing Support",
-      desc: "Holistic horoscope-based suggestions and gentle remedial poojas to support physical and mental wellbeing. Not a substitute for medical care — recommended alongside professional treatment.",
-      img: "https://i.pinimg.com/1200x/30/05/93/300593ddfebda3597cfb52632ce93e4e.jpg",
-    },
-    {
-      title: "Samboga Vashikaran (Relationship Attraction)",
-      desc: "Specialized vashikaran remedies aimed at rekindling attraction and emotional closeness. Provided carefully with ethical guidance and clear expectations.",
-      img: "https://i.pinimg.com/736x/0b/b7/91/0bb7917954d720df78a4f71c085c46ff.jpg",
-    },
-    {
-      title: "Family Vashikaran & Harmony",
-      desc: "Remedies and rituals to ease family disputes, restore trust and harmony in household relationships while respecting everyone's wellbeing and consent.",
-      img: "https://i.pinimg.com/736x/ad/7b/99/ad7b9936b889c3abaafe22c732867d86.jpg",
     },
   ];
 
   return (
-    <motion.div
-      className="grid md:grid-cols-3 gap-8 w-full px-2 md:max-w-7xl md:mx-auto"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-    >
-      {problems.map((problem, index) => (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+      {problems.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col items-center 
-            bg-gray-900 border border-gray-700 rounded-3xl 
-            shadow-xl overflow-hidden text-white 
-            hover:scale-105 transition-transform duration-500 
-            hover:shadow-indigo-500/50"
+          className="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden"
         >
           {/* Image */}
-          <div className="relative w-full h-80 overflow-hidden">
-            <img
-              src={problem.img}
-              alt={problem.title}
-              className="h-full w-full object-cover transform hover:scale-110 transition duration-700 filter brightness-75"
-            />
-            {/* Overlay dark layer for better text visibility */}
-            <div className="absolute inset-0 bg-black/30"></div>
-          </div>
+          <img
+            src={item.img}
+            alt={item.title}
+            className="w-full h-56 object-cover"
+          />
 
-          {/* Text */}
-          <div className="p-6 flex flex-col items-center text-center space-y-3">
-            <h3 className="text-2xl font-extrabold montserrat drop-shadow-md tracking-wide text-white">
-              {problem.title}
+          {/* Content */}
+          <div className="p-4 text-center">
+            <h3 className="text-lg font-bold text-white montserrat">
+              {item.title}
             </h3>
-            <p className="text-base opacity-90 poppins leading-relaxed text-gray-200">
-              {problem.desc}
-            </p>
-          </div>
 
-          {/* Button */}
-          <a
-            href={`https://wa.me/${whatsapp_number}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mb-6"
-          >
-            <button
-              className="montserrat flex items-center gap-2 
-                bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 
-                text-white font-semibold px-7 py-3 rounded-full shadow-lg 
-                hover:from-pink-500 hover:via-purple-500 hover:to-indigo-500 
-                hover:shadow-pink-400/50 hover:scale-105 
-                transition-all duration-300"
+            <p className="text-sm text-gray-300 mt-2">{item.desc}</p>
+
+            <a
+              href={`https://wa.me/${whatsapp_number}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4"
             >
-              <Phone className="w-5 h-5" />
-              Online Chatting
-            </button>
-          </a>
+              <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-semibold">
+                WhatsApp Now
+              </button>
+            </a>
+          </div>
         </div>
       ))}
-    </motion.div>
+    </div>
   );
 };
 
@@ -307,7 +254,7 @@ const AstrologyServicesModern = () => {
       img: "https://i.pinimg.com/736x/be/96/4b/be964bb4f6d6e07752fc4b363859b048.jpg",
     },
     {
-      title: "Husband Wife Dispute",
+      title: "Husband & Wife Dispute",
       img: "https://i.pinimg.com/736x/f5/b2/00/f5b200772b619765261b2a50b595ae72.jpg",
     },
     {
@@ -315,59 +262,63 @@ const AstrologyServicesModern = () => {
       img: "https://i.pinimg.com/1200x/2f/5b/b3/2f5bb3dde2c5891188f1170b5d12260f.jpg",
     },
     {
-      title: "Financial Problem",
+      title: "Financial Problems",
       img: "https://i.pinimg.com/736x/40/99/9c/40999c10cdac6c327a1378c45be496b5.jpg",
     },
   ];
 
   return (
-    <section className="mt-2 mb-2 relative py-20 px-6 overflow-hidden bg-gradient-to-br from-purple-900 via-pink-800 to-red-700">
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30"></div>
-
-      <div className="relative max-w-7xl mx-auto text-center">
+    <section className="py-16 px-4 bg-gradient-to-b from-gray-950 to-gray-900">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-extrabold text-white mb-16 montserrat drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+          className="text-3xl md:text-4xl font-extrabold text-white text-center mb-12 montserrat"
         >
-          ✨ Premium Astrology Services ✨
+          Astrology Services
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: idx * 0.2 }}
-              viewport={{ once: true }}
-              className="relative rounded-3xl backdrop-blur-xl bg-white/10 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)] p-6 group hover:scale-105 transition-transform duration-500"
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              className="bg-gray-900 border border-gray-800 rounded-2xl 
+                shadow-md hover:shadow-purple-500/20 
+                transition-all duration-300 overflow-hidden"
             >
-              {/* Service Image */}
-              <div className="relative w-32 h-32 mx-auto mb-6">
+              {/* Image */}
+              <div className="h-48 w-full overflow-hidden">
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="w-full h-full object-cover rounded-full border-4 border-pink-300 shadow-lg"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
-                {/* Glow Ring */}
-                <span className="absolute inset-0 rounded-full bg-pink-400/40 blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></span>
               </div>
 
-              {/* Title */}
-              <h3 className="text-xl font-bold text-white mb-4 montserrat tracking-wide">
-                {service.title}
-              </h3>
+              {/* Content */}
+              <div className="p-5 text-center">
+                <h3 className="text-lg font-semibold text-white montserrat">
+                  {service.title}
+                </h3>
 
-              {/* Call Button */}
-              <a href={`tel:${phone_number}`}>
-                <button className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 text-white font-semibold py-3 rounded-full shadow-lg hover:shadow-pink-400/50 hover:scale-105 transition-all duration-300">
-                  <Phone className="w-5 h-5" /> Call Now
-                </button>
-              </a>
+                <a href={`tel:${phone_number}`}>
+                  <button
+                    className="mt-4 w-full flex items-center justify-center gap-2 
+                      bg-purple-600 hover:bg-purple-700 
+                      text-white text-sm font-semibold 
+                      py-2.5 rounded-full transition-colors duration-300"
+                  >
+                    <Phone className="w-4 h-4" />
+                    Call Now
+                  </button>
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -381,90 +332,98 @@ const AllServicesModern = () => {
     {
       title: "Ex Love Back",
       icon: Heart,
-      desc: "Astrological remedies to bring your ex back with love & trust.",
+      desc: "Astrological remedies to reunite love with trust & harmony.",
+      gradient: "from-pink-500 via-rose-500 to-red-500",
     },
     {
       title: "Court Case Solution",
       icon: Scale,
-      desc: "Effective solutions for legal & court-related issues.",
+      desc: "Powerful astrology solutions for legal & court issues.",
+      gradient: "from-yellow-400 via-orange-500 to-red-500",
     },
     {
       title: "Family Problem",
       icon: Users,
-      desc: "Resolve disputes & bring peace at home with astrology.",
+      desc: "Restore peace & happiness in family relationships.",
+      gradient: "from-green-400 via-emerald-500 to-teal-500",
     },
     {
       title: "Business Problem",
       icon: Briefcase,
-      desc: "Boost your career & business success with remedies.",
+      desc: "Grow business, profits & career with astrology remedies.",
+      gradient: "from-blue-500 via-indigo-500 to-purple-600",
     },
     {
       title: "Childless Couple",
       icon: Users,
-      desc: "Astrological remedies to bless couples with children.",
+      desc: "Blessings & remedies for couples seeking children.",
+      gradient: "from-fuchsia-500 via-pink-500 to-rose-500",
     },
     {
       title: "Thantra Pooja",
       icon: Sparkles,
-      desc: "Personalized astrology & pujas for spiritual growth, meditation & karma solutions.",
+      desc: "Spiritual poojas for karma cleansing & energy balance.",
+      gradient: "from-purple-500 via-violet-500 to-indigo-500",
     },
   ];
 
   return (
-    <section className="relative py-20 px-6 overflow-hidden bg-gradient-to-br from-purple-900 via-pink-800 to-red-700">
-      {/* Sparkles / Cosmic effect */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto text-center">
+    <section className="py-20 px-4 bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-6xl font-extrabold text-white mb-16 montserrat drop-shadow-[0_0_25px_rgba(255,255,255,0.6)]"
+          className="text-4xl md:text-5xl font-extrabold text-center mb-16 
+            bg-gradient-to-r from-pink-400 via-yellow-400 to-purple-500 
+            bg-clip-text text-transparent montserrat"
         >
-          🌟 Premium Astrology Services 🌟
+          Our Astrology Services
         </motion.h2>
 
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Grid */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, id) => (
             <motion.div
               key={id}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: id * 0.15 }}
-              viewport={{ once: true }}
-              className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 shadow-[0_8px_32px_rgba(0,0,0,0.6)] hover:scale-105 hover:shadow-[0_0_35px_rgba(255,100,150,0.6)] transition-all duration-500 group"
+              whileHover={{ y: -8 }}
+              transition={{ type: "spring", stiffness: 180 }}
+              className={`relative rounded-3xl p-1 bg-gradient-to-br ${service.gradient}`}
             >
-              {/* Icon Glow */}
-              <div className="flex justify-center mb-6 relative">
-                <service.icon className="w-16 h-16 text-pink-400 drop-shadow-[0_0_15px_rgba(255,100,150,0.8)] group-hover:scale-110 transition-transform duration-300" />
-                <span className="absolute inset-0 rounded-full bg-pink-400/40 blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></span>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-2xl font-bold text-white mb-4 montserrat">
-                {service.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-200 mb-8 text-sm open-sans">
-                {service.desc}
-              </p>
-
-              {/* Button */}
-              <a href={`tel:${phone_number}`}>
-                <motion.button
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="montserrat flex items-center justify-center gap-3 w-full bg-gradient-to-r from-red-500 via-pink-500 to-purple-600 text-white font-semibold py-3 rounded-full shadow-lg hover:shadow-[0_0_25px_rgba(255,100,150,0.8)] transition-all duration-300"
+              {/* Inner Card */}
+              <div className="h-full rounded-3xl bg-gray-950 p-8 text-center shadow-xl">
+                {/* Icon */}
+                <div
+                  className={`mx-auto mb-6 w-20 h-20 rounded-full 
+                    flex items-center justify-center 
+                    bg-gradient-to-br ${service.gradient} shadow-lg`}
                 >
-                  <Phone className="w-5 h-5" />
-                  Contact Now
-                </motion.button>
-              </a>
+                  <service.icon className="w-10 h-10 text-white" />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-white mb-3 montserrat">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-300 text-sm leading-relaxed mb-6 open-sans">
+                  {service.desc}
+                </p>
+
+                {/* Button */}
+                <a href={`tel:${phone_number}`}>
+                  <button
+                    className={`w-full py-3 rounded-full font-semibold text-white
+                      bg-gradient-to-r ${service.gradient}
+                      hover:brightness-110 transition-all duration-300`}
+                  >
+                    Contact Now
+                  </button>
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
