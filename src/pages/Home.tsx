@@ -10,7 +10,6 @@ import {
 import { motion } from "framer-motion";
 import Testimonials from "../Genaral/Testimonial";
 import FAQ from "../Genaral/FAQ";
-import CardCarousel from "../Genaral/CardsCarousel";
 import {
   company_name,
   person_name,
@@ -23,14 +22,12 @@ const Home = () => {
   return (
     <div className="flex flex-col   w-full h-full">
       <ImageView />
-      <CardCarousel />
       <Problems />
       <AboutAstrologer />
       <AstrologyServices />
       <AstrologyServicesModern />
       <AllServicesModern />
       <HomeLastDesign />
-      <Testimonials />
       <FAQ />
     </div>
   );
@@ -41,51 +38,100 @@ export default Home;
 const Problems = () => {
   const problems = [
     {
-      title: "Lost Love Back",
-      desc: "Guidance available through call and WhatsApp consultation.",
-      img: "https://i.pinimg.com/736x/4a/c8/aa/4ac8aaa977a4eef9bb1eac0041929380.jpg",
+      title: "Relationship Guidance",
+      desc: "Vedic consultation for emotional clarity and relationship harmony.",
+      img: "https://i.pinimg.com/1200x/24/19/c7/2419c77357b4f81546c1ae8f4b4242d9.jpg",
     },
     {
-      title: "Marriage Problems",
-      desc: "Astrology solutions for disputes, delays and misunderstandings.",
-      img: "https://i.pinimg.com/1200x/c1/2b/fc/c12bfc17ac4630ade4f0e1e4a1f819e2.jpg",
+      title: "Marriage Support",
+      desc: "Astrological insights for better understanding and marital balance.",
+      img: "https://i.pinimg.com/736x/55/d8/6c/55d86c64e6d1278d7e7d73faa0d82294.jpg",
     },
     {
-      title: "Education Remedies",
-      desc: "Astrological remedies to improve focus and academic growth.",
-      img: "https://i.pinimg.com/736x/73/49/66/73496669119b34a1dd1ab91ffd626f68.jpg",
+      title: "Career Direction",
+      desc: "Personalized guidance to navigate career growth and opportunities.",
+      img: "https://i.pinimg.com/1200x/ea/4a/df/ea4adf16e1e40f3570cedaff3a8bc7c3.jpg",
+    },
+    {
+      title: "Education & Focus",
+      desc: "Spiritual remedies to enhance concentration and learning progress.",
+      img: "https://i.pinimg.com/1200x/41/04/77/41047752bbb211d5064516ee12e88fb9.jpg",
+    },
+    {
+      title: "Financial Stability",
+      desc: "Vedic insights to improve financial planning and positive mindset.",
+      img: "https://i.pinimg.com/736x/5d/78/7f/5d787fd719617e594edb6b1fa0335f55.jpg",
+    },
+    {
+      title: "Family Harmony",
+      desc: "Consultation for resolving misunderstandings and improving peace at home.",
+      img: "https://i.pinimg.com/736x/29/da/fb/29dafb844bd06001a7430df8ef675a6c.jpg",
+    },
+    {
+      title: "Health & Well-being",
+      desc: "Spiritual guidance to support emotional and mental balance.",
+      img: "https://i.pinimg.com/1200x/c4/b9/85/c4b985f1a8e0ef855f514a827bc9d8d0.jpg",
+    },
+    {
+      title: "Business Growth",
+      desc: "Astrological consultation for strategic planning and growth clarity.",
+      img: "https://i.pinimg.com/1200x/e3/82/9f/e3829f3f5aeeacc813cd0a0a8eebc8ac.jpg",
+    },
+    {
+      title: "Life Path Clarity",
+      desc: "Discover strengths and direction through traditional Vedic analysis.",
+      img: "https://i.pinimg.com/736x/fe/c4/db/fec4dbd0406e4ae90d4cde684526f66b.jpg",
+    },
+    {
+      title: "Spiritual Growth",
+      desc: "Guidance to deepen spiritual awareness and inner peace.",
+      img: "https://i.pinimg.com/736x/bd/07/98/bd07989b7867692892f45969e20442c0.jpg",
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
       {problems.map((item, index) => (
         <div
           key={index}
-          className="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden"
+          className="group bg-gradient-to-b from-emerald-950 to-teal-950
+      border border-white/10 rounded-2xl overflow-hidden
+      shadow-lg shadow-black/30
+      hover:shadow-xl hover:shadow-black/40 transition-all duration-300"
         >
           {/* Image */}
-          <img
-            src={item.img}
-            alt={item.title}
-            className="w-full h-56 object-cover"
-          />
+          <div className="overflow-hidden">
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-full h-56 object-cover
+          group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
 
           {/* Content */}
-          <div className="p-4 text-center">
-            <h3 className="text-lg font-bold text-white montserrat">
+          <div className="p-6 text-center">
+            <h3 className="text-xl font-serif font-semibold text-amber-300 tracking-wide">
               {item.title}
             </h3>
 
-            <p className="text-sm text-gray-300 mt-2">{item.desc}</p>
+            <p className="text-sm text-emerald-100/90 mt-3 leading-relaxed">
+              {item.desc}
+            </p>
 
             <a
               href={`https://wa.me/${whatsapp_number}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-4"
+              className="inline-block mt-6"
             >
-              <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-semibold">
+              <button
+                className="bg-gradient-to-r from-emerald-600 to-teal-600
+            text-white px-6 py-2.5 rounded-full text-sm font-medium
+            shadow-md shadow-black/30
+            hover:from-emerald-500 hover:to-teal-500
+            transition-all duration-300"
+              >
                 WhatsApp Now
               </button>
             </a>
@@ -98,54 +144,80 @@ const Problems = () => {
 
 const AboutAstrologer = () => {
   return (
-    <section className="relative py-20 px-6 bg-gradient-to-b from-purple-50 via-pink-50 to-orange-50 overflow-hidden">
+    <section
+      className="relative py-20 px-6 
+      bg-gradient-to-b from-emerald-50 via-stone-50 to-amber-50 
+      overflow-hidden"
+    >
       {/* Background Abstract Shapes */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-300/30 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-pink-300/30 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+      <div
+        className="absolute -top-32 -left-32 w-96 h-96 
+        bg-emerald-300/20 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        className="absolute -bottom-32 -right-32 w-96 h-96 
+        bg-amber-300/20 rounded-full blur-3xl pointer-events-none"
+      ></div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center relative z-10">
         {/* Left Side Content */}
         <div className="space-y-6 md:pr-6 text-center md:text-left">
-          <button className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold montserrat shadow-lg hover:scale-105 transition-transform duration-300">
+          <button
+            className="bg-gradient-to-r from-emerald-600 to-teal-600 
+            text-white px-6 py-2.5 rounded-full text-sm font-medium 
+            tracking-wide shadow-md hover:opacity-90 transition"
+          >
             ✨ Know the Astrologer
           </button>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 montserrat drop-shadow-lg">
+          <h2
+            className="text-4xl md:text-5xl 
+            font-serif font-bold text-amber-700 tracking-wide"
+          >
             {company_name}
           </h2>
 
-          <p className="text-gray-800 leading-relaxed text-lg md:text-xl open-sans">
+          <p className="text-stone-800 leading-relaxed text-lg font-light">
             Meet{" "}
-            <span className="font-bold text-purple-600">{company_name}</span>, a
-            globally renowned astrologer whose wisdom in astrology is inherited
-            through generations. His expertise has guided countless individuals
-            toward{" "}
-            <span className="font-semibold text-indigo-600">
-              peace, clarity, and success
+            <span className="font-semibold text-emerald-700">
+              {company_name}
+            </span>
+            , a renowned astrologer whose knowledge is rooted in traditional
+            Vedic wisdom. His guidance has helped many individuals discover{" "}
+            <span className="font-medium text-amber-700">
+              clarity, balance, and confidence
             </span>
             .
           </p>
 
-          <p className="text-gray-700 leading-relaxed text-lg md:text-xl">
-            With personalized solutions, accurate predictions, and deep
-            understanding of life’s challenges, {company_name} continues to
-            attract a global clientele seeking both spiritual and practical
-            guidance.
+          <p className="text-stone-700 leading-relaxed text-lg font-light">
+            Through personalized consultations and thoughtful insights,
+            {company_name} supports people in navigating life decisions with
+            calmness, awareness, and spiritual grounding.
           </p>
 
           {/* Call to Action */}
-          <div className="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
+          <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
             <a
               href={`tel:${phone_number}`}
-              className="flex items-center gap-2 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+              className="flex items-center gap-2 
+              bg-gradient-to-r from-amber-500 to-orange-500 
+              text-black px-6 py-3 rounded-full font-semibold 
+              shadow-md hover:from-amber-400 hover:to-orange-400 
+              transition-all"
             >
               Call Now
             </a>
+
             <a
               href={`https://wa.me/${whatsapp_number}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-gradient-to-r from-green-500 via-teal-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+              className="flex items-center gap-2 
+              bg-gradient-to-r from-emerald-600 to-teal-600 
+              text-white px-6 py-3 rounded-full font-semibold 
+              shadow-md hover:from-emerald-500 hover:to-teal-500 
+              transition-all"
             >
               Chat Now
             </a>
@@ -156,13 +228,21 @@ const AboutAstrologer = () => {
         <div className="flex justify-center relative">
           <div className="relative w-full max-w-md">
             <img
-              src="https://i.pinimg.com/1200x/2b/7e/f6/2b7ef69aef08f4f9ec85e1f37984332a.jpg"
+              src="https://i.pinimg.com/1200x/a2/2e/34/a22e34ab3f1765939a7825677df5861f.jpg"
               alt="Astrologer Banner"
-              className="w-full h-[420px] rounded-3xl object-cover shadow-2xl transform hover:scale-105 transition-transform duration-500"
+              className="w-full h-[420px] rounded-3xl object-cover object-top
+              shadow-xl transition-transform duration-500 hover:scale-105"
             />
-            {/* Neon Glow */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-purple-300/40 blur-3xl rounded-full animate-pulse"></div>
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-pink-300/40 blur-3xl rounded-full animate-pulse"></div>
+
+            {/* Soft Natural Glow */}
+            <div
+              className="absolute -bottom-6 -right-6 w-24 h-24 
+              bg-amber-300/30 blur-3xl rounded-full"
+            ></div>
+            <div
+              className="absolute -top-6 -left-6 w-24 h-24 
+              bg-emerald-300/30 blur-3xl rounded-full"
+            ></div>
           </div>
         </div>
       </div>
@@ -195,15 +275,28 @@ const AstrologyServices = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-to-b from-purple-900 via-indigo-900 to-black overflow-hidden">
-      {/* Decorative Background Aura */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-pink-500/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-yellow-400/20 rounded-full blur-3xl animate-pulse"></div>
+    <section
+      className="relative py-20 
+      bg-gradient-to-b from-emerald-950 via-teal-950 to-stone-950 
+      overflow-hidden"
+    >
+      {/* Soft Background Glows */}
+      <div
+        className="absolute top-0 left-0 w-72 h-72 
+        bg-emerald-700/20 rounded-full blur-3xl"
+      ></div>
+      <div
+        className="absolute bottom-0 right-0 w-80 h-80 
+        bg-amber-700/20 rounded-full blur-3xl"
+      ></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         {/* Title */}
-        <h2 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-yellow-300 to-red-400 drop-shadow-lg montserrat mb-14">
-          🌟 Our Premium Astrology Services 🌟
+        <h2
+          className="text-3xl md:text-5xl 
+          font-serif font-bold text-amber-300 tracking-wide mb-14"
+        >
+          Our Astrology Services
         </h2>
 
         {/* Cards Grid */}
@@ -211,31 +304,57 @@ const AstrologyServices = () => {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="group relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden shadow-lg hover:shadow-pink-500/40 hover:scale-[1.03] transition-all duration-500"
+              className="group relative 
+              bg-white/5 backdrop-blur-xl 
+              border border-white/10 
+              rounded-3xl overflow-hidden 
+              shadow-lg shadow-black/30 
+              hover:shadow-xl hover:shadow-black/40 
+              transition-all duration-500"
             >
               {/* Image */}
               <div className="relative overflow-hidden">
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="w-full h-56 object-cover transform group-hover:scale-110 transition duration-700"
+                  className="w-full h-56 object-cover 
+                  group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div
+                  className="absolute inset-0 
+                  bg-gradient-to-t from-black/70 via-black/30 to-transparent"
+                ></div>
               </div>
 
               {/* Content */}
               <div className="p-6 space-y-4 text-center">
-                <h3 className="text-xl font-bold text-yellow-300 montserrat drop-shadow-md">
+                <h3
+                  className="text-xl 
+                  font-serif font-semibold 
+                  text-amber-300 tracking-wide"
+                >
                   {service.title}
                 </h3>
-                <p className="text-gray-200 text-sm leading-relaxed open-sans">
+
+                <p
+                  className="text-emerald-100/90 
+                  text-sm leading-relaxed font-light"
+                >
                   {service.desc}
                 </p>
 
                 {/* Call Button */}
                 <a href={`tel:${phone_number}`}>
-                  <button className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 text-white font-semibold shadow-lg hover:shadow-pink-500/50 hover:scale-105 transition-all duration-300 montserrat">
-                    <Phone className="w-5 h-5" /> Call Us Now
+                  <button
+                    className="w-full flex items-center justify-center gap-2 
+                    py-3 px-6 rounded-full 
+                    bg-gradient-to-r from-amber-500 to-orange-500 
+                    text-black font-semibold 
+                    shadow-md hover:from-amber-400 hover:to-orange-400 
+                    transition-all duration-300"
+                  >
+                    <Phone className="w-5 h-5" />
+                    Call Now
                   </button>
                 </a>
               </div>
@@ -268,7 +387,10 @@ const AstrologyServicesModern = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-gray-950 to-gray-900">
+    <section
+      className="py-16 px-4 
+      bg-gradient-to-b from-emerald-950 via-teal-950 to-stone-950"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.h2
@@ -276,43 +398,57 @@ const AstrologyServicesModern = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-extrabold text-white text-center mb-12 montserrat"
+          className="text-3xl md:text-4xl 
+          font-serif font-bold text-amber-300 
+          tracking-wide text-center mb-12"
         >
           Astrology Services
         </motion.h2>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
-              className="bg-gray-900 border border-gray-800 rounded-2xl 
-                shadow-md hover:shadow-purple-500/20 
-                transition-all duration-300 overflow-hidden"
+              className="group 
+              bg-white/5 backdrop-blur-xl 
+              border border-white/10 
+              rounded-3xl overflow-hidden
+              shadow-lg shadow-black/30
+              hover:shadow-xl hover:shadow-black/40
+              transition-all duration-300"
             >
               {/* Image */}
               <div className="h-48 w-full overflow-hidden">
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover
+                  group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* Content */}
               <div className="p-5 text-center">
-                <h3 className="text-lg font-semibold text-white montserrat">
+                <h3
+                  className="text-lg 
+                  font-serif font-semibold 
+                  text-amber-300 tracking-wide"
+                >
                   {service.title}
                 </h3>
 
                 <a href={`tel:${phone_number}`}>
                   <button
-                    className="mt-4 w-full flex items-center justify-center gap-2 
-                      bg-purple-600 hover:bg-purple-700 
-                      text-white text-sm font-semibold 
-                      py-2.5 rounded-full transition-colors duration-300"
+                    className="mt-5 w-full flex items-center justify-center gap-2 
+                    bg-gradient-to-r from-emerald-600 to-teal-600
+                    text-white text-sm font-medium 
+                    py-2.5 rounded-full
+                    shadow-md shadow-black/30
+                    hover:from-emerald-500 hover:to-teal-500
+                    transition-all duration-300"
                   >
                     <Phone className="w-4 h-4" />
                     Call Now
@@ -332,43 +468,46 @@ const AllServicesModern = () => {
     {
       title: "Ex Love Back",
       icon: Heart,
-      desc: "Astrological remedies to reunite love with trust & harmony.",
-      gradient: "from-pink-500 via-rose-500 to-red-500",
+      desc: "Astrological guidance to restore emotional balance and understanding.",
+      gradient: "from-emerald-600 via-teal-600 to-amber-600",
     },
     {
-      title: "Court Case Solution",
+      title: "Court Case Guidance",
       icon: Scale,
-      desc: "Powerful astrology solutions for legal & court issues.",
-      gradient: "from-yellow-400 via-orange-500 to-red-500",
+      desc: "Traditional insights to support clarity during legal matters.",
+      gradient: "from-amber-600 via-orange-600 to-stone-700",
     },
     {
-      title: "Family Problem",
+      title: "Family Harmony",
       icon: Users,
-      desc: "Restore peace & happiness in family relationships.",
-      gradient: "from-green-400 via-emerald-500 to-teal-500",
+      desc: "Supportive consultation to improve peace in family relationships.",
+      gradient: "from-emerald-600 via-green-600 to-teal-600",
     },
     {
-      title: "Business Problem",
+      title: "Business Direction",
       icon: Briefcase,
-      desc: "Grow business, profits & career with astrology remedies.",
-      gradient: "from-blue-500 via-indigo-500 to-purple-600",
+      desc: "Vedic insights to help with planning and professional growth.",
+      gradient: "from-teal-600 via-cyan-700 to-slate-700",
     },
     {
-      title: "Childless Couple",
+      title: "Couple Well-being",
       icon: Users,
-      desc: "Blessings & remedies for couples seeking children.",
-      gradient: "from-fuchsia-500 via-pink-500 to-rose-500",
+      desc: "Guidance focused on emotional well-being and togetherness.",
+      gradient: "from-amber-600 via-rose-600 to-stone-700",
     },
     {
-      title: "Thantra Pooja",
+      title: "Spiritual Pooja",
       icon: Sparkles,
-      desc: "Spiritual poojas for karma cleansing & energy balance.",
-      gradient: "from-purple-500 via-violet-500 to-indigo-500",
+      desc: "Sacred rituals aimed at inner balance and spiritual grounding.",
+      gradient: "from-slate-700 via-indigo-700 to-teal-700",
     },
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-black via-gray-900 to-black">
+    <section
+      className="py-20 px-4 
+      bg-gradient-to-br from-emerald-950 via-teal-950 to-stone-950"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.h2
@@ -376,11 +515,11 @@ const AllServicesModern = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-extrabold text-center mb-16 
-            bg-gradient-to-r from-pink-400 via-yellow-400 to-purple-500 
-            bg-clip-text text-transparent montserrat"
+          className="text-4xl md:text-5xl 
+          font-serif font-bold text-center mb-16 
+          text-amber-300 tracking-wide"
         >
-          Our Astrology Services
+          Our Services
         </motion.h2>
 
         {/* Grid */}
@@ -390,35 +529,52 @@ const AllServicesModern = () => {
               key={id}
               whileHover={{ y: -8 }}
               transition={{ type: "spring", stiffness: 180 }}
-              className={`relative rounded-3xl p-1 bg-gradient-to-br ${service.gradient}`}
+              className={`relative rounded-3xl p-[1px] 
+              bg-gradient-to-br ${service.gradient}`}
             >
               {/* Inner Card */}
-              <div className="h-full rounded-3xl bg-gray-950 p-8 text-center shadow-xl">
+              <div
+                className="h-full rounded-3xl 
+                bg-white/5 backdrop-blur-xl 
+                p-8 text-center 
+                shadow-lg shadow-black/30"
+              >
                 {/* Icon */}
                 <div
                   className={`mx-auto mb-6 w-20 h-20 rounded-full 
-                    flex items-center justify-center 
-                    bg-gradient-to-br ${service.gradient} shadow-lg`}
+                  flex items-center justify-center 
+                  bg-gradient-to-br ${service.gradient} 
+                  shadow-md`}
                 >
                   <service.icon className="w-10 h-10 text-white" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-white mb-3 montserrat">
+                <h3
+                  className="text-2xl 
+                  font-serif font-semibold 
+                  text-amber-300 tracking-wide mb-3"
+                >
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-300 text-sm leading-relaxed mb-6 open-sans">
+                <p
+                  className="text-emerald-100/90 
+                  text-sm leading-relaxed font-light mb-6"
+                >
                   {service.desc}
                 </p>
 
                 {/* Button */}
                 <a href={`tel:${phone_number}`}>
                   <button
-                    className={`w-full py-3 rounded-full font-semibold text-white
-                      bg-gradient-to-r ${service.gradient}
-                      hover:brightness-110 transition-all duration-300`}
+                    className={`w-full py-3 rounded-full 
+                    font-semibold text-black
+                    bg-gradient-to-r from-amber-500 to-orange-500
+                    shadow-md
+                    hover:from-amber-400 hover:to-orange-400
+                    transition-all duration-300`}
                   >
                     Contact Now
                   </button>
@@ -434,9 +590,17 @@ const AllServicesModern = () => {
 
 function HomeLastDesign() {
   return (
-    <section className="mt-2 mb-2 relative bg-gradient-to-br from-purple-900 via-indigo-900 to-black py-20 px-6 overflow-hidden">
-      {/* Stars background overlay */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+    <section
+      className="mt-2 mb-2 relative 
+      bg-gradient-to-br from-emerald-950 via-teal-950 to-stone-950 
+      py-20 px-6 overflow-hidden"
+    >
+      {/* Soft Texture Overlay */}
+      <div
+        className="absolute inset-0 
+        bg-[url('https://www.transparenttextures.com/patterns/subtle-dots.png')] 
+        opacity-10"
+      ></div>
 
       <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         {/* Left Side - Image */}
@@ -446,15 +610,29 @@ function HomeLastDesign() {
           transition={{ duration: 0.8 }}
           className="flex justify-center relative"
         >
-          <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-pink-500 via-purple-500 to-yellow-400 blur-3xl opacity-40 animate-pulse"></div>
-          <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-400/60 backdrop-blur-xl">
+          <div
+            className="absolute -inset-4 rounded-full 
+            bg-gradient-to-tr from-emerald-600 via-teal-600 to-amber-600 
+            blur-3xl opacity-30"
+          ></div>
+
+          <div
+            className="relative w-80 h-80 md:w-96 md:h-96 
+            rounded-full overflow-hidden 
+            shadow-xl border border-white/20 backdrop-blur-xl"
+          >
             <img
               src="https://i.pinimg.com/1200x/3d/ef/55/3def558579612a517065a7c48310e918.jpg"
               alt={person_name}
-              className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+              className="w-full h-full object-cover 
+              hover:scale-105 transition-transform duration-700"
             />
-            {/* Glow ring */}
-            <div className="absolute inset-0 rounded-full border-4 border-pink-400/40 animate-spin-slow"></div>
+
+            {/* Soft Ring */}
+            <div
+              className="absolute inset-0 rounded-full 
+              border border-amber-400/40"
+            ></div>
           </div>
         </motion.div>
 
@@ -465,28 +643,45 @@ function HomeLastDesign() {
           transition={{ duration: 0.8 }}
           className="space-y-6 text-center md:text-left"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-300 via-pink-400 to-red-500 bg-clip-text text-transparent drop-shadow-lg montserrat">
-            <Sparkles className="inline w-8 h-8 text-yellow-300 animate-pulse mr-2" />
-            Astrologer {person_name}
-          </h2>
-          <h3 className="text-lg md:text-2xl font-semibold text-gray-200 montserrat">
-            🌌 India’s Most Trusted Astrology Expert
-          </h3>
-          <p className="text-gray-300 leading-relaxed text-base open-sans">
-            With profound knowledge in{" "}
-            <span className="text-yellow-400">Vastu</span>,{" "}
-            <span className="text-pink-400">horoscope reading</span>, and{" "}
-            <span className="text-purple-300">spiritual guidance</span>,{" "}
+          <h2
+            className="text-4xl md:text-5xl 
+            font-serif font-bold 
+            text-amber-300 tracking-wide"
+          >
             {person_name}
-            Ji empowers individuals to overcome obstacles and discover their
-            true destiny.
+          </h2>
+
+          <h3
+            className="text-lg md:text-2xl 
+            font-medium text-emerald-100 tracking-wide"
+          >
+            Trusted Spiritual Vedic Guidance
+          </h3>
+
+          <p className="text-emerald-100/90 leading-relaxed text-base font-light">
+            With deep understanding of{" "}
+            <span className="text-amber-300 font-medium">Vastu</span>,{" "}
+            <span className="text-emerald-300 font-medium">
+              horoscope interpretation
+            </span>
+            , and{" "}
+            <span className="text-teal-300 font-medium">
+              spiritual consultation
+            </span>
+            , {person_name} provides calm, thoughtful guidance to help
+            individuals move forward with clarity and confidence.
           </p>
 
           {/* Contact Section */}
           <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-3">
             <a
               href={`tel:${phone_number}`}
-              className="flex items-center gap-2 bg-gradient-to-r from-red-500 via-pink-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-pink-400/60 hover:scale-105 transition-all duration-300"
+              className="flex items-center gap-2 
+              bg-gradient-to-r from-amber-500 to-orange-500 
+              text-black px-6 py-3 rounded-full 
+              font-semibold shadow-md 
+              hover:from-amber-400 hover:to-orange-400 
+              transition-all duration-300"
             >
               <Phone size={20} /> Call Now
             </a>
@@ -495,15 +690,23 @@ function HomeLastDesign() {
               href={`https://wa.me/${whatsapp_number}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-green-400/60 hover:scale-105 transition-all duration-300"
+              className="flex items-center gap-2 
+              bg-gradient-to-r from-emerald-600 to-teal-600 
+              text-white px-6 py-3 rounded-full 
+              font-semibold shadow-md 
+              hover:from-emerald-500 hover:to-teal-500 
+              transition-all duration-300"
             >
               <MessageCircle size={20} /> Chat on WhatsApp
             </a>
           </div>
 
           {/* Special Note */}
-          <p className="mt-5 text-yellow-300 font-bold tracking-wide text-sm md:text-base poppins">
-            Accurate Predictions | Trusted Guidance | Life-changing Remedies ✨
+          <p
+            className="mt-5 text-amber-300 
+            font-medium tracking-wide text-sm md:text-base"
+          >
+            Trusted Guidance • Calm Insights • Spiritual Clarity
           </p>
         </motion.div>
       </div>

@@ -1,6 +1,6 @@
 import { Mail, Phone } from "lucide-react"; // icons
 import Form from "../Genaral/Form";
-import { phone_number, whatsapp_number } from "../Genaral/secrete";
+import { address, phone_number, whatsapp_number } from "../Genaral/secrete";
 
 export default function Contact() {
   return (
@@ -38,14 +38,19 @@ export default function Contact() {
           </p>
 
           <p className="open-sans text-xs md:text-sm text mt-1 max-w-[340px] leading-relaxed">
-            No 34, 7th Cross, Vijay Nagar, 98/3 DC Road,
+            {address.line1}
             <br />
-            Kutti Yappa Garden, Bilekahalli,
+            {address.line2}
             <br />
-            Bengaluru (Urban) – 560076, Karnataka
+            {address.District}, {address.state} – {address.pincode},{" "}
+            {address.country}
             <br />
             <span className="text-purple-400 font-semibold">
-              Phone: 91102 22675
+              Phone: {phone_number}
+            </span>
+            <br />
+            <span className="text-pink-400 font-semibold">
+              WhatsApp: {whatsapp_number}
             </span>
           </p>
 

@@ -1,12 +1,17 @@
-import { MenuIcon, MessageCircle, Phone, X } from "lucide-react";
+import { MenuIcon, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { company_name, phone_number, whatsapp_number } from "./secrete";
+import { address, company_name, phone_number } from "./secrete";
 
 const Header = () => {
   return (
-    <header className="w-full bg-gradient-to-r from-indigo-950 via-purple-950 to-fuchsia-950 border-b border-white/10">
-      <div className="w-full md:w-[90%] mx-auto">
+    <header
+      className="w-full  top-0 
+      bg-gradient-to-r 
+      from-stone-950 via-amber-900 to-orange-950
+      border-b border-white/10 backdrop-blur-xl shadow-lg shadow-black/25"
+    >
+      <div className="w-full md:w-[90%] mx-auto px-4 py-4 md:py-5 flex items-center">
         <Logo />
       </div>
     </header>
@@ -40,7 +45,7 @@ const Logo = () => (
           border border-yellow-400 shadow-lg"
         >
           <img
-            src="https://i.pinimg.com/1200x/28/9c/2e/289c2e010fbf9b1e4cba8bab99aa9ed1.jpg"
+            src="https://i.pinimg.com/1200x/67/24/c1/6724c1236dfb7f5f96e422ef92cb6fd2.jpg"
             alt="Company Logo"
             className="w-full h-full object-cover hover:scale-110 transition duration-500"
           />
@@ -49,7 +54,7 @@ const Logo = () => (
         {/* Text */}
         <div className="flex flex-col">
           <h1
-            className="montserrat font-extrabold text-xl md:text-3xl 
+            className="open-sans font-extrabold text-xl md:text-4xl 
             text-white tracking-wide"
           >
             {company_name}
@@ -59,15 +64,14 @@ const Logo = () => (
             Since 1950
           </p>
 
-          <p className="text-xs md:text-sm text-gray-200 mt-2 leading-relaxed max-w-[360px]">
-            <b>No. 34, 7th Cross, Vijay Nagar</b>, 98/3 DC Road,
+          <p className="text-sm md:text-sm text-gray-200 mt-2 leading-relaxed max-w-[360px]">
+            <b>{address.line1}</b>, {address.line2}
             <br />
-            Kuttiyappa Garden, Bilekahalli,
-            <br />
-            Bengaluru – 560076, Karnataka
+            {address.District}, {address.state} – {address.pincode},{" "}
+            {address.country}
             <br />
             <span className="text-yellow-400 font-semibold">
-              📞 +91 91102 22675
+              📞 +91 {phone_number}
             </span>
           </p>
         </div>
@@ -98,7 +102,7 @@ const Menu = () => {
         <MenuIcon className="w-6 h-6 text-white" strokeWidth={2} />
       </button>
 
-      {open && <MobileMenu setOpen={setOpen} />}
+      <div className="bg-black">{open && <MobileMenu setOpen={setOpen} />}</div>
     </div>
   );
 };
@@ -121,32 +125,39 @@ const NavLink = ({
 const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   return (
     <div
-      className="fixed inset-0 z-[9999]
-      bg-gradient-to-b from-black via-purple-950 to-indigo-950
-      px-6 py-8 flex flex-col"
+      className="fixed inset-0 z-[999999]
+        bg-gradient-to-b from-stone-950 via-amber-900 to-orange-950
+      px-6 py-8 h-screen flex flex-col
+      backdrop-blur-xl"
     >
       {/* Top Bar */}
       <div className="flex items-center justify-between border-b border-white/10 pb-4">
-        <h1 className="text-2xl font-extrabold text-yellow-400 tracking-wide">
+        <h1 className="text-xl font-bold tracking-wide text-amber-300">
           {company_name}
         </h1>
+
         <button
           onClick={() => setOpen(false)}
-          className="p-2 rounded-full bg-yellow-400 hover:bg-yellow-500 transition"
+          className="p-2.5 rounded-full 
+          bg-white/10 hover:bg-white/20 
+          transition-all duration-300"
         >
-          <X className="w-6 h-6 text-black" />
+          <X className="w-6 h-6 text-amber-300" />
         </button>
       </div>
 
       {/* Nav Links */}
-      <ul className="flex flex-col gap-5 mt-8 text-white text-lg font-semibold">
+      <ul className="flex flex-col gap-4 mt-8 text-emerald-100 text-[17px] font-medium tracking-wide">
         {["Home", "About", "Services", "Testimonials", "Contact"].map(
           (item) => (
             <Link
               key={item}
               to={`/${item.toLowerCase()}`}
               onClick={() => setOpen(false)}
-              className="py-3 px-4 rounded-xl hover:bg-white/10 hover:text-yellow-400 transition"
+              className="py-3 px-5 rounded-2xl
+              bg-white/15
+              hover:bg-white/10 hover:text-amber-300
+              transition-all duration-300"
             >
               {item}
             </Link>
@@ -155,12 +166,14 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
       </ul>
 
       {/* CTA Section */}
+      {/*
       <div className="mt-auto space-y-4 pt-8 border-t border-white/10">
         <a
           href={`tel:${phone_number}`}
           className="flex items-center justify-center gap-2 w-full
-          bg-yellow-400 text-black py-3 rounded-full font-bold
-          hover:bg-yellow-500 transition"
+          bg-gradient-to-r from-amber-400 to-orange-400
+          text-black py-3 rounded-full font-semibold
+          hover:from-amber-300 hover:to-orange-300 transition"
         >
           <Phone size={18} />
           Call Now
@@ -169,32 +182,15 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         <a
           href={`https://wa.me/${whatsapp_number}`}
           className="flex items-center justify-center gap-2 w-full
-          bg-green-500 text-white py-3 rounded-full font-bold
-          hover:bg-green-600 transition"
+          bg-gradient-to-r from-emerald-500 to-teal-500
+          text-white py-3 rounded-full font-semibold
+          hover:from-emerald-400 hover:to-teal-400 transition"
         >
           <MessageCircle size={18} />
           WhatsApp
         </a>
       </div>
+      */}
     </div>
   );
 };
-
-// const TextMarquee = () => (
-//   <div
-//     className="overflow-hidden
-//  bg-gradient-to-l from-green-300 via-blue-300 to-orange-300
-
-// "
-//   >
-//     <Marquee
-//       speed={50}
-//       className="whitespace-nowrap text-black  py-2 open-sans text-md md:text-base tracking-wide"
-//     >
-//       🌙 Facing issues like Love Breakup, Marriage Disputes, Relationship
-//       Conflicts, or wanting to Get Your Love Back? 🔮 Consult for Vashikaran
-//       solutions to attract your desired partner or resolve personal issues.
-//       Contact a trusted Astrologer today.
-//     </Marquee>
-//   </div>
-// );
