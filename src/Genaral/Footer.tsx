@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronRight, Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import useInViewOnce from "./InView";
 import {
   address,
@@ -12,21 +12,6 @@ import {
 
 export default function Footer() {
   const [ref, inView] = useInViewOnce(0.2);
-
-  const services = [
-    "Love Expert",
-    "Astrology Specialist",
-    "Love Problem Expert",
-    "Love Marriage Approval",
-    "Quick Rishta Marriage",
-  ];
-
-  const whyChoose = [
-    "Relationship Problem",
-    "Husband-Wife Dispute Specialist",
-    "Happy Clients",
-    "Online Astrologer",
-  ];
 
   return (
     <motion.footer
@@ -56,125 +41,87 @@ export default function Footer() {
         grid grid-cols-1 md:grid-cols-4 gap-10"
       >
         {/* ABOUT */}
-        <div
-          className="rounded-3xl p-6 
-          bg-white/5 backdrop-blur-xl 
-          border border-white/10"
+        <h2
+          className="text-3xl font-serif font-semibold 
+  text-amber-300  tracking-wide"
         >
-          <h2
-            className="text-2xl font-serif font-semibold 
-            text-amber-300 mb-3 tracking-wide"
-          >
-            About {company_name}
-          </h2>
-          <p className="text-sm leading-relaxed text-emerald-100/90 font-light">
-            <span className="font-medium text-emerald-100">{company_name}</span>{" "}
-            offers trusted Vedic guidance rooted in traditional wisdom.
-            <span className="font-medium text-amber-300">
-              {" "}
-              {person_name}
-            </span>{" "}
-            provides thoughtful consultation in relationships, career, and
-            personal growth.
-          </p>
-        </div>
+          About {company_name}
+        </h2>
+
+        <p className="pl-5 poppins text-xl leading-relaxed text-emerald-100/90 font-sans font-light">
+          <span className="font-medium text-emerald-100">{company_name}</span>{" "}
+          offers traditional Vedic guidance rooted in experience and ethical
+          practice.
+          <span className="font-medium text-amber-300">
+            {" "}
+            {person_name}
+          </span>{" "}
+          provides thoughtful consultations focused on clarity, balance, and
+          personal well-being across relationships, career, and life decisions.
+        </p>
 
         {/* CONTACT */}
-        <div
-          className="rounded-3xl p-6 
-          bg-white/5 backdrop-blur-xl 
-          border border-white/10"
-        >
+        <div className="flex flex-col gap-2 ">
           <h2
-            className="text-2xl font-serif font-semibold 
-            text-amber-300 mb-4 tracking-wide"
+            className="text-3xl font-serif font-semibold 
+  text-amber-300  tracking-wide mb-4"
           >
-            Contact Us
+            Get in Touch
           </h2>
+          <div className="poppins text-xl pl-5 flex flex-col gap-3 border-l border-white/20 ">
+            <p className="flex items-center gap-2 text-emerald-100/90 ">
+              <Phone className="w-5 h-5 text-amber-300" />
+              <span className="tracking-wide">{phone_number}</span>
+            </p>
 
-          <p className="flex items-center gap-2 text-emerald-100/90">
-            <Phone className="w-5 h-5 text-amber-300" />
-            {phone_number}
-          </p>
+            <p className="flex items-center gap-2 text-emerald-100/90  ">
+              <MessageCircle className="w-5 h-5 text-amber-300" />
+              <span className="tracking-wide">{whatsapp_number}</span>
+            </p>
 
-          <p className="flex items-center gap-2 text-emerald-100/90 mt-2">
-            <MessageCircle className="w-5 h-5 text-amber-300" />
-            {whatsapp_number}
-          </p>
+            <p className="  leading-relaxed text-emerald-100/80 font-light ">
+              <span className="font-medium text-emerald-100">
+                {address.line1}
+              </span>
+              <br />
+              {address.line2}
+              <br />
+              {address.District}, {address.state} – {address.pincode}
+              <br />
+              {address.country}
+            </p>
 
-          <p
-            className="text-sm mt-3 leading-relaxed 
-            text-emerald-100/80 font-light"
-          >
-            <b className="text-emerald-100">{address.line1}</b>
-            <br />
-            {address.line2}
-            <br />
-            {address.District}, {address.state} – {address.pincode},{" "}
-            {address.country}
-            <br />
             <a
               href={`tel:${phone_number}`}
-              className="underline text-amber-300"
+              className="inline-block  text-amber-300 underline tracking-wide"
             >
-              📞 +91 {phone_number}
+              📞 Call for Consultation
             </a>
-          </p>
 
-          <p className="mt-3 font-medium text-amber-300">
-            Trusted Vedic Guidance
-          </p>
+            <p className=" text-sm font-medium text-amber-300">
+              Ethical • Confidential • Respectful
+            </p>
+          </div>
         </div>
 
-        {/* SERVICES */}
-        <div
-          className="rounded-3xl p-6 
-          bg-white/5 backdrop-blur-xl 
-          border border-white/10"
-        >
+        {/* Policy */}
+        <div className="poppins ">
           <h2
-            className="text-2xl font-serif font-semibold 
+            className="text-3xl font-serif font-semibold 
             text-amber-300 mb-3 tracking-wide"
           >
-            Our Services
+            Policy & Support
           </h2>
-          <ul className="space-y-2 text-sm">
-            {services.map((service, i) => (
-              <li
-                key={i}
-                className="flex items-center gap-2 
-                text-emerald-100/90 font-light"
-              >
-                <ChevronRight className="w-4 h-4 text-amber-300" />
-                {service}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* WHY CHOOSE */}
-        <div
-          className="rounded-3xl p-6 
-          bg-white/5 backdrop-blur-xl 
-          border border-white/10"
-        >
-          <h2
-            className="text-2xl font-serif font-semibold 
-            text-amber-300 mb-3 tracking-wide"
-          >
-            Why Choose Us?
-          </h2>
-          <ul className="space-y-2 text-sm">
-            {whyChoose.map((item, i) => (
-              <li
-                key={i}
-                className="flex items-center gap-2 
-                text-emerald-100/90 font-light"
-              >
-                <ChevronRight className="w-4 h-4 text-amber-300" />
-                {item}
-              </li>
-            ))}
+          <ul className="space-y-2 text-xl pl-5">
+            <li>
+              <a href="/privacy-policy">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/terms">Terms & Conditions</a>
+            </li>
+            <li>
+              <a href="/contact">Contact Us</a>
+            </li>
           </ul>
         </div>
       </motion.div>

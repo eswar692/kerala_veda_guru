@@ -54,7 +54,7 @@ const Logo = () => (
         {/* Text */}
         <div className="flex flex-col">
           <h1
-            className="open-sans font-extrabold text-xl md:text-4xl 
+            className="open-sans font-extrabold text-3xl md:text-4xl 
             text-white tracking-wide"
           >
             {company_name}
@@ -64,7 +64,7 @@ const Logo = () => (
             Since 1950
           </p>
 
-          <p className="text-sm md:text-sm text-gray-200 mt-2 leading-relaxed max-w-[360px]">
+          <p className="roboto text-xl md:text-sm text-gray-200 mt-2 leading-relaxed max-w-[360px]">
             <b>{address.line1}</b>, {address.line2}
             <br />
             {address.District}, {address.state} – {address.pincode},{" "}
