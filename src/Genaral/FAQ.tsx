@@ -4,31 +4,32 @@ import { person_name, phone_number } from "./secrete";
 
 const faqs = [
   {
-    question: `Can We Meet Astrologer ${person_name}?`,
-    answer: `Yes, personal meetings are available with prior appointment. 📲 Whatsapp: ${phone_number}`,
+    question: `Can We Meet ${person_name} in Person?`,
+    answer: `Yes, in-person sessions are available with prior appointment. 📲 WhatsApp: ${phone_number}`,
   },
   {
-    question: "Is Telephonic Consultation Available?",
-    answer: `Yes, you can connect via phone from anywhere in the world. 📞 Phone: ${phone_number}`,
+    question: "Is Phone Consultation Available?",
+    answer: `Yes, you can connect via phone from anywhere in India. 📞 Phone: ${phone_number}`,
   },
   {
-    question: "What Kind Of Astrology Services Are Available Here?",
+    question: "What Kind of Consultation Services Are Available?",
     answer:
-      "We provide Vastu, horoscope, career, marriage, health, and business guidance.",
+      "We provide Vastu, horoscope reading, career planning, marriage support, health well-being, and business direction consultations.",
   },
   {
-    question: "What Kind Of Products Are Available?",
+    question: "What Kind of Products Are Available?",
     answer:
-      "Astrological remedies, gemstones, yantras, and spiritual products are available.",
+      "Traditional Kerala wellness products, gemstones, and well-being items are available.",
   },
   {
-    question: "Do We Avail Courses On Astrology?",
-    answer: "Yes, astrology learning courses are offered for different levels.",
-  },
-  {
-    question: "What Do We Teach In The Astrology Course?",
+    question: "Are Learning Sessions Offered?",
     answer:
-      "We cover horoscope reading, palmistry basics, and predictive astrology.",
+      "Yes, traditional knowledge learning sessions are offered for different levels.",
+  },
+  {
+    question: "What Is Covered in the Learning Sessions?",
+    answer:
+      "We cover horoscope reading, palmistry basics, and traditional Kerala knowledge practices.",
   },
 ];
 
@@ -46,14 +47,8 @@ export default function FAQ() {
       text-white overflow-hidden poppins"
     >
       {/* Soft Background Glows */}
-      <div
-        className="absolute top-10 left-10 w-64 h-64 
-        bg-emerald-700/20 rounded-full blur-3xl"
-      ></div>
-      <div
-        className="absolute bottom-10 right-10 w-72 h-72 
-        bg-amber-700/20 rounded-full blur-3xl"
-      ></div>
+      <div className="absolute top-10 left-10 w-64 h-64 bg-emerald-700/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-amber-700/20 rounded-full blur-3xl"></div>
 
       <div className="relative max-w-5xl mx-auto">
         {/* Heading */}
@@ -106,11 +101,7 @@ export default function FAQ() {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <div
-                  className="px-6 pb-6 
-                  text-emerald-100/90 
-                  leading-relaxed text-base font-light"
-                >
+                <div className="px-6 pb-6 text-emerald-100/90 leading-relaxed text-base font-light">
                   {faq.answer}
                 </div>
               </div>
@@ -120,7 +111,12 @@ export default function FAQ() {
 
         {/* CTA Button */}
         <div className="mt-14 flex justify-center">
-          <a href={`https://wa.me/${phone_number}`} target="_blank">
+          <a
+            href={`https://wa.me/${phone_number}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat with us on WhatsApp"
+          >
             <button
               className="flex items-center gap-3 
               bg-gradient-to-r from-emerald-600 to-teal-600 
@@ -131,7 +127,7 @@ export default function FAQ() {
               transition-all duration-300"
             >
               <MessageCircle className="w-6 h-6" />
-              Chat With Astrologer
+              Chat With Us
             </button>
           </a>
         </div>

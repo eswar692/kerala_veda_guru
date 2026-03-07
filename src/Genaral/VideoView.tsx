@@ -6,7 +6,7 @@ const ImageView = () => {
       {/* Image Background */}
       <img
         src="https://i.pinimg.com/1200x/67/24/c1/6724c1236dfb7f5f96e422ef92cb6fd2.jpg"
-        alt="Astrology Banner"
+        alt={`${company_name} Banner`}
         className="w-full h-full object-cover scale-105"
       />
 
@@ -20,8 +20,8 @@ const ImageView = () => {
         </h1>
 
         <p className="mt-4 text-emerald-100 text-sm md:text-lg leading-relaxed max-w-xs md:max-w-xl font-light tracking-wide">
-          Renowned astrologer offering personalized Vedic guidance for clarity,
-          spiritual growth, and meaningful life direction. Trusted worldwide.
+          Trusted Kerala practitioner offering personalized consultations for
+          clarity, well-being, and confident life decisions.
         </p>
 
         <div className="mt-8 flex gap-4">

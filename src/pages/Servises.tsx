@@ -3,39 +3,38 @@ import { phone_number, whatsapp_number } from "../Genaral/secrete";
 
 const services = [
   {
-    name: "Love Problems",
-    desc: "Solutions for lost love, misunderstandings, and building strong relationships.",
+    name: "Relationship Support",
+    desc: "Consultation for understanding, rebuilding trust, and strengthening personal relationships.",
     img: "https://i.pinimg.com/1200x/3f/f5/89/3ff5895bca8970847577656ffe788eff.jpg",
   },
   {
-    name: "Marriage Issues",
-    desc: "Guidance for happy married life, compatibility, and resolving conflicts.",
+    name: "Marriage Consultation",
+    desc: "Guidance for a balanced married life, compatibility understanding, and conflict resolution.",
     img: "https://i.pinimg.com/736x/fa/ee/46/faee46287149c9a2470c20d26318fee1.jpg",
   },
   {
-    name: "Court Cases",
-    desc: "Astrological remedies to overcome legal challenges and disputes.",
+    name: "Legal Matter Support",
+    desc: "Traditional insights to support clarity and peace of mind during legal challenges.",
     img: "https://i.pinimg.com/1200x/fb/4e/36/fb4e36b171a92fb4d391f3bc6a90e8a5.jpg",
   },
   {
-    name: "Finance Problems",
-    desc: "Effective remedies for wealth, investments, and financial stability.",
+    name: "Financial Well-being",
+    desc: "Holistic consultation for wealth planning, investment direction, and financial stability.",
     img: "https://i.pinimg.com/736x/53/3a/25/533a25d0fd940cc5fc8b5fdaf457b14a.jpg",
   },
   {
     name: "Education Guidance",
-    desc: "Astrology support for students seeking focus, success, and higher studies.",
+    desc: "Traditional consultation support for students seeking focus, confidence, and academic progress.",
     img: "https://i.pinimg.com/736x/7f/8a/60/7f8a6099a523cc79342eaee0a29e92f8.jpg",
   },
   {
     name: "Career Growth",
-    desc: "Clarity for job opportunities, promotions, and professional success.",
+    desc: "Clarity for job opportunities, professional direction, and career advancement.",
     img: "https://i.pinimg.com/736x/2d/21/ff/2d21ff0997bd7bdfb46491c3d13798c3.jpg",
   },
-
   {
-    name: "Future Predictions",
-    desc: "Accurate horoscope readings to understand your destiny and future.",
+    name: "Life Path Consultation",
+    desc: "In-depth horoscope reading to understand personal strengths and plan life decisions confidently.",
     img: "https://i.pinimg.com/1200x/40/6d/94/406d941b9978384bd9008b1f81c613a3.jpg",
   },
 ];
@@ -50,10 +49,10 @@ export default function Services() {
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-20 relative z-10">
         <h2 className="text-5xl font-extrabold bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 bg-clip-text text-transparent drop-shadow-lg tracking-tight">
-          Our Astrology Services
+          Our Consultation Services
         </h2>
         <p className="text-gray-700 mt-6 text-lg md:text-xl leading-relaxed">
-          Discover our expert services designed to guide you with{" "}
+          Explore our services designed to guide you with{" "}
           <span className="font-semibold text-violet-600">wisdom</span>,{" "}
           <span className="font-semibold text-pink-600">peace</span>, and{" "}
           <span className="font-semibold text-sky-600">clarity</span> in life.
@@ -90,7 +89,7 @@ export default function Services() {
               <div className="mt-6 flex gap-3">
                 <a href={`tel:${phone_number}`} className="flex-1">
                   <button className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-pink-600 hover:from-violet-700 hover:to-pink-700 text-white px-4 py-2 rounded-xl shadow-md transition">
-                    <Phone size={18} /> Call
+                    <Phone size={18} /> Call Now
                   </button>
                 </a>
                 <a
@@ -98,9 +97,10 @@ export default function Services() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1"
+                  aria-label={`WhatsApp us about ${service.name}`}
                 >
                   <button className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-4 py-2 rounded-xl shadow-md transition">
-                    <MessageCircle size={18} /> WhatsApp
+                    <MessageCircle size={18} /> Message
                   </button>
                 </a>
               </div>
